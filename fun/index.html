@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Satya Srujana Pilli — The 99th Precinct dossier edition. Coffee-powered builder."
+    />
+    <title>PILLI-99 · Subject Dossier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dossier</a>
+
+    <div class="desk-texture" aria-hidden="true"></div>
+
+    <header class="precinct-header">
+      <div class="precinct-header__brand">
+        <span class="badge-99" aria-hidden="true">99</span>
+        <div>
+          <p class="precinct-header__dept">Ninth Precinct · Talent Division</p>
+          <p class="precinct-header__file">Subject Dossier · Confidential</p>
+        </div>
+      </div>
+      <nav class="precinct-nav" id="precinct-nav" aria-label="Dossier sections"></nav>
+      <a class="version-switch" href="../personalportfolio.html"
+        >← Classic file</a
+      >
+    </header>
+
+    <aside class="coffee-widget" aria-label="Coffee fuel level">
+      <button
+        type="button"
+        class="coffee-widget__btn"
+        id="coffee-btn"
+        title="Click to refill"
+      >
+        <span class="coffee-cup" aria-hidden="true">
+          <span class="coffee-cup__steam"></span>
+          <span class="coffee-cup__liquid" id="coffee-liquid"></span>
+        </span>
+        <span class="coffee-widget__label">Caffeine</span>
+        <span class="coffee-widget__pct" id="coffee-pct">87%</span>
+      </button>
+    </aside>
+
+    <main id="main">
+      <section class="dossier-panel hero-panel" id="intro">
+        <div class="stamp stamp--classified">CLASSIFIED</div>
+        <div class="hero-panel__grid">
+          <div class="mugshot-card">
+            <div class="mugshot-card__frame">
+              <span class="mugshot-card__initials">SSP</span>
+              <p class="mugshot-card__caption">ID #PILLI-99</p>
+            </div>
+          </div>
+          <div class="hero-panel__copy">
+            <p class="hero-panel__case">Case opened · Portfolio v2</p>
+            <h1 class="hero-panel__name" id="hero-name">
+              Satya Srujana Pilli
+            </h1>
+            <p class="hero-panel__headline" id="hero-headline"></p>
+            <p class="hero-panel__tagline" id="hero-tagline"></p>
+            <div class="quote-ticker" id="quote-ticker" aria-live="polite"></div>
+            <div class="hero-panel__actions">
+              <a class="btn btn--gold" href="#dossier">Open dossier</a>
+              <a class="btn btn--outline" href="#tip-line">Send a tip</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dossier-panel vibes-panel" id="vibes">
+        <h2 class="panel-title">
+          <span class="panel-title__num">A</span> Off-duty intel
+        </h2>
+        <p class="panel-subtitle">
+          What fuels the detective when the IDE closes.
+        </p>
+        <div class="vibes-grid" id="vibes-grid"></div>
+      </section>
+
+      <section class="dossier-panel" id="dossier">
+        <h2 class="panel-title">
+          <span class="panel-title__num">01</span> Subject background
+        </h2>
+        <div class="manila-folder">
+          <div class="manila-folder__tab">Background check</div>
+          <div class="manila-folder__body" id="dossier-body"></div>
+          <aside class="medium-note" id="medium-note"></aside>
+        </div>
+      </section>
+
+      <section class="dossier-panel" id="arsenal">
+        <h2 class="panel-title">
+          <span class="panel-title__num">02</span> Equipment locker
+        </h2>
+        <p class="panel-subtitle">Checked out and ready for duty.</p>
+        <div id="arsenal-body"></div>
+      </section>
+
+      <section class="dossier-panel" id="field-reports">
+        <h2 class="panel-title">
+          <span class="panel-title__num">03</span> Field reports
+        </h2>
+        <ol class="report-list" id="field-reports-list"></ol>
+      </section>
+
+      <section class="dossier-panel" id="open-cases">
+        <h2 class="panel-title">
+          <span class="panel-title__num">04</span> Open cases
+        </h2>
+        <p class="panel-subtitle">Active investigations & shipped builds.</p>
+        <div class="case-board" id="open-cases-list"></div>
+      </section>
+
+      <section class="dossier-panel tip-panel" id="tip-line">
+        <h2 class="panel-title">
+          <span class="panel-title__num">05</span> Tip line
+        </h2>
+        <p class="panel-subtitle" id="tip-lede"></p>
+        <div class="tip-cards" id="tip-cards"></div>
+      </section>
+    </main>
+
+    <footer class="precinct-footer">
+      <p>
+        &copy; <span id="year"></span> · File maintained by
+        <span id="footer-name">Satya Srujana Pilli</span>
+      </p>
+      <p class="precinct-footer__disclaimer">
+        Fan-themed portfolio. Not affiliated with NBC or Brooklyn Nine-Nine.
+        Just a dev who loves the show, coffee, and movies.
+      </p>
+      <a class="version-switch" href="../personalportfolio.html"
+        >View classic portfolio →</a
+      >
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
