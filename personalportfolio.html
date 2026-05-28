@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Satya Srujana Pilli — MS Computer Science at UMass, ex-Amazon SDE, builder of AI systems and full-stack products."
+      content="Satya Srujana Pilli — Full-stack SDE, AI/ML engineer, and software ML researcher. MS CS UMass Amherst, ex-Amazon SDE, BINDS Lab."
     />
     <title>Satya Srujana Pilli</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="personalportfolio.css" />
@@ -19,13 +19,22 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="bg-shapes" aria-hidden="true">
-      <span class="shape shape-1"></span>
-      <span class="shape shape-2"></span>
-      <span class="shape shape-3"></span>
+    <div class="site-backdrop" aria-hidden="true">
+      <div class="site-backdrop__base"></div>
+      <div class="site-backdrop__aurora"></div>
+      <div class="site-backdrop__mesh">
+        <span class="mesh-orb mesh-orb--1"></span>
+        <span class="mesh-orb mesh-orb--2"></span>
+        <span class="mesh-orb mesh-orb--3"></span>
+        <span class="mesh-orb mesh-orb--4"></span>
+      </div>
+      <div class="site-backdrop__arcs" aria-hidden="true"></div>
+      <div class="site-backdrop__grid"></div>
+      <div class="site-backdrop__grain"></div>
+      <div class="site-backdrop__vignette"></div>
     </div>
 
-    <nav class="chapter-rail" aria-label="Page chapters">
+    <nav class="chapter-rail" aria-label="Page sections">
       <ol class="chapter-rail__list" id="chapter-rail"></ol>
     </nav>
 
@@ -46,70 +55,65 @@
     </header>
 
     <main id="main">
-      <section class="chapter hero" id="intro" data-chapter="00">
-        <div class="chapter__inner reveal">
-          <p class="hero__eyebrow">Portfolio · Chapter 00</p>
-          <h1 class="hero__title" id="hero-name" tabindex="0">
-            Satya Srujana Pilli
-          </h1>
-          <p class="hero__headline" id="hero-headline"></p>
-          <p class="hero__tagline" id="hero-tagline"></p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#story">Start the story</a>
-            <a class="btn btn--ghost" href="#connect">Say hello</a>
+      <section class="chapter hero" id="intro" data-section="intro">
+        <div class="chapter__inner hero__layout reveal">
+          <div class="hero__content">
+            <p class="hero__eyebrow" id="hero-eyebrow"></p>
+            <h1 class="hero__title" id="hero-name">Satya Srujana Pilli</h1>
+            <p class="hero__headline" id="hero-headline"></p>
+            <p class="hero__tagline" id="hero-tagline"></p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#experience">View experience</a>
+              <a class="btn btn--ghost" href="#connect">Contact</a>
+            </div>
+            <p class="hero__scroll-hint" aria-hidden="true">
+              <span>Scroll</span>
+              <span class="hero__scroll-line"></span>
+            </p>
           </div>
-          <p class="hero__scroll-hint" aria-hidden="true">
-            <span>Scroll</span>
-            <span class="hero__scroll-line"></span>
-          </p>
+          <div class="hero__visual" id="hero-visual" aria-hidden="true"></div>
         </div>
       </section>
 
-      <section class="chapter" id="story" data-chapter="01">
-        <p class="chapter__label">01 — Story</p>
+      <section class="chapter" id="about" data-section="about">
+        <p class="chapter__label">About</p>
         <div class="chapter__inner">
-          <h2 class="chapter__title reveal">The plot so far</h2>
+          <h2 class="chapter__title reveal">Background</h2>
           <div class="story__body reveal" id="about-content"></div>
           <aside class="medium-callout reveal" id="medium-callout"></aside>
         </div>
       </section>
 
-      <section class="chapter" id="skills" data-chapter="02">
-        <p class="chapter__label">02 — Toolkit</p>
+      <section class="chapter" id="skills" data-section="skills">
+        <p class="chapter__label">Skills</p>
         <div class="chapter__inner">
-          <h2 class="chapter__title reveal">What I ship with</h2>
-          <p class="chapter__lede reveal">
-            From payment rails at Amazon to LLM agents in the lab — here's the
-            stack I reach for.
-          </p>
+          <h2 class="chapter__title reveal">Technical skills</h2>
+          <p class="chapter__lede reveal" id="skills-lede"></p>
           <div class="skills-grid" id="skills-content"></div>
         </div>
       </section>
 
-      <section class="chapter" id="experience" data-chapter="03">
-        <p class="chapter__label">03 — Experience</p>
+      <section class="chapter" id="experience" data-section="experience">
+        <p class="chapter__label">Experience</p>
         <div class="chapter__inner">
-          <h2 class="chapter__title reveal">Where I've built</h2>
+          <h2 class="chapter__title reveal">Professional experience</h2>
           <ol class="timeline" id="experience-list"></ol>
         </div>
       </section>
 
-      <section class="chapter" id="projects" data-chapter="04">
-        <p class="chapter__label">04 — Projects</p>
+      <section class="chapter" id="projects" data-section="projects">
+        <p class="chapter__label">Projects</p>
         <div class="chapter__inner">
-          <h2 class="chapter__title reveal">Things I've made</h2>
-          <p class="chapter__lede reveal">
-            Research tools and products — each with a problem, a build, and a
-            measurable outcome.
-          </p>
+          <h2 class="chapter__title reveal">Selected work</h2>
+          <p class="chapter__lede reveal" id="projects-lede"></p>
           <div class="projects-grid" id="projects-list"></div>
         </div>
       </section>
 
-      <section class="chapter chapter--connect" id="connect" data-chapter="05">
-        <p class="chapter__label">05 — Connect</p>
+      <section class="chapter chapter--connect" id="connect" data-section="connect">
+        <p class="chapter__label">Contact</p>
         <div class="chapter__inner">
-          <h2 class="chapter__title reveal">Let's make something</h2>
+          <h2 class="chapter__title reveal">Get in touch</h2>
           <p class="chapter__lede reveal" id="connect-lede"></p>
           <div class="contact-grid" id="contact-links"></div>
         </div>
@@ -121,19 +125,12 @@
         &copy; <span id="year"></span>
         <span id="footer-name">Satya Srujana Pilli</span>
       </p>
-      <p class="site-footer__note">Built with curiosity and too much coffee.</p>
+      <p class="site-footer__note" id="footer-note"></p>
+      <div class="site-footer__webring" id="footer-webring"></div>
       <p class="site-footer__alt">
-        <a href="fun/">☕ Try the B99 + Coffee + Movies edition →</a>
+        <a href="fun/">Fun edition →</a>
       </p>
     </footer>
-
-    <div
-      class="easter-toast"
-      id="easter-toast"
-      role="status"
-      aria-live="polite"
-      hidden
-    ></div>
 
     <script src="personalportfolio.js" defer></script>
   </body>

@@ -1,17 +1,45 @@
 const PORTFOLIO = {
   name: "Satya Srujana Pilli",
+  eyebrow: "Full-Stack SDE · AI / ML Engineering",
   headline:
-    "MS Computer Science @ UMass Amherst · ex-Amazon SDE · AI & full-stack builder",
+    "MS Computer Science, UMass Amherst · ex-Amazon SDE · AI and SDE focused",
   tagline:
-    "I build systems that scale in production—and agents that reason when static checks aren't enough.",
-  about: [
-    "I started out shipping real products at Amazon—payment flows across six EU and UK markets, item-level financing, and experiments through WebLabs. That's where I learned what \"done\" means when millions of transactions depend on it.",
-    "These days I'm at UMass Amherst (MS CS, CGPA 3.96), splitting time between research and builds: gaze-based preference learning at CIIR, adaptive LLM monitoring at Cisco, and forensic AI tools at RescueLab. I like problems where the metric isn't just accuracy—it's whether the system actually helps someone.",
-    "Before grad school, I earned my B.E. in Computer Science from BITS Pilani Hyderabad. I'm always up for collaborations at the intersection of ML, systems, and products that ship.",
+    "I ship full-stack software in production and build AI/ML systems—from LLM applications and ML pipelines to research prototypes in software ML.",
+  footerNote:
+    "Full-stack SDE · AI/ML engineer · BINDS Lab · UMass Amherst · ex-Amazon",
+  skillsLede:
+    "Stack for full-stack product development, ML engineering, and research code—from APIs and front ends to model training and deployment.",
+  projectsLede:
+    "Full-stack and ML builds: LLM-powered tools, summarization products, and research software with measurable impact.",
+  heroHighlights: [
+    { label: "BINDS Lab", sub: "Software ML research", pos: "tl" },
+    { label: "UMass Amherst", sub: "MS CS · CGPA 3.96", pos: "tr" },
+    { label: "Amazon", sub: "Full-stack SDE · ex-SDE", pos: "bl" },
+    { label: "Focus", sub: "AI · Software ML research", pos: "br" },
   ],
+  webring: {
+    href: "https://umaring.github.io/",
+    src: "assets/umass-amherst-webring.png",
+    alt: "UMass Amherst Web Ring",
+    width: 88,
+    height: 31,
+  },
+  about: [
+    "I earned my B.E. in Computer Science from BITS Pilani Hyderabad (2018–2022), then spent two years at Amazon Bangalore as a full-stack SDE—building and shipping payment services, item-level financing, and WebLabs experiments used across six EU and UK markets.",
+    "I completed my M.S. in Computer Science at UMass Amherst (Sep 2024 – May 2026, CGPA 3.96). In grad school I built ML and LLM systems: gaze-based preference learning at CIIR, adaptive LLM agent monitoring at Cisco, and forensic AI pipelines at RescueLab.",
+    "I now work in the BINDS Lab under Prof. Hava Siegelmann, conducting research on biologically inspired neural architectures and modular machine learning systems, while building production-quality research infrastructure and tooling for neural network experimentation.",
+],
   education: [
-    { school: "UMass Amherst", degree: "MS Computer Science", detail: "CGPA 3.96 · 2024–present" },
-    { school: "BITS Pilani Hyderabad", degree: "B.E. Computer Science", detail: "CGPA 8.33 · 2018–2022" },
+    {
+      school: "UMass Amherst",
+      degree: "MS Computer Science",
+      detail: "CGPA 3.96 · Sep 2024 – May 2026",
+    },
+    {
+      school: "BITS Pilani Hyderabad",
+      degree: "B.E. Computer Science",
+      detail: "CGPA 8.33 · 2018–2022",
+    },
   ],
   skills: {
     languages: [
@@ -69,6 +97,16 @@ const PORTFOLIO = {
   },
   experience: [
     {
+      title: "Researcher",
+      org: "BINDS Lab · UMass Amherst · Prof. Hava Siegelmann",
+      dates: "May 2026 – Present",
+      bullets: [
+        "Developing neural networks from fundamental computational building blocks, including logic-gate-inspired architectures and interpretable network components.",
+        "Building tooling and infrastructure for generating, testing, and analyzing modular neural network configurations and weight databases.",
+        "Exploring biologically inspired approaches to neural computation and structured network design in collaboration with Prof. Hava Siegelmann and the BINDS Lab.",
+    ],
+    },
+    {
       title: "Graduate Research Extern",
       org: "Cisco · San Francisco",
       dates: "Jan 2026 – May 2026",
@@ -93,7 +131,7 @@ const PORTFOLIO = {
       org: "Amazon · Bangalore",
       dates: "Jul 2022 – Mar 2024",
       bullets: [
-        "Launched credit-based installment plans across 6 EU/UK markets, boosting customer UX by 20%.",
+        "Shipped full-stack payment features (Java, Spring, AWS) across 6 EU/UK markets, boosting customer UX by 20%.",
         "Engineered item-level payment controls for ILF, increasing engagement by 28%.",
         "Cut payment transaction latency by 35%; drove A/B experiments via WebLabs with 99.9% deploy success.",
       ],
@@ -103,8 +141,8 @@ const PORTFOLIO = {
       org: "Amazon · Bangalore",
       dates: "Jan 2022 – Jun 2022",
       bullets: [
-        "Built Vapor, an internal planning tool used by 50+ teams, reducing planning overhead by 20%.",
-        "Implemented service profilers and consistency checks across distributed systems.",
+        "Built Vapor, a full-stack internal planning tool used by 50+ teams, reducing planning overhead by 20%.",
+        "Implemented service profilers and consistency checks across distributed backend systems.",
       ],
     },
   ],
@@ -112,38 +150,38 @@ const PORTFOLIO = {
     {
       title: "LLM-Powered Crime Element Analyzer",
       context: "UMass RescueLab · Prof. Brian Levine",
-      emoji: "🔍",
+      initial: "CE",
       visualClass: "crime",
       story:
-        "A forensic pipeline using Mistral 7B and Gemma 3 to extract crime elements from chat data via few-shot prompting—cutting manual review time by 60%. Flask-ML API with CLI for batch processing across CSV, PDF, and XLSX.",
+        "ML engineering project: a forensic LLM pipeline (Mistral 7B, Gemma 3) with few-shot prompting to extract crime elements from chat data—cutting manual review time by 60%. Shipped a Flask ML API and CLI for batch CSV, PDF, and XLSX processing.",
       tech: ["Python", "Flask", "Ollama", "Mistral-7B", "Gemma 3"],
       repo: null,
     },
     {
       title: "Briefly",
-      context: "Summarization platform",
-      emoji: "⚡",
+      context: "Full-stack · AI product",
+      initial: "BR",
       visualClass: "briefly",
       story:
-        "Launched a summarization platform achieving ~95% accuracy via MistralAI, processing 100+ files daily for 50+ users—with 30% faster backend processing.",
+        "Full-stack summarization product (React, Flask, MongoDB) with MistralAI—~95% accuracy, 100+ files/day for 50+ users, and 30% faster backend processing after optimization.",
       tech: ["React", "Flask", "MistralAI", "MongoDB", "Axios"],
       repo: null,
     },
   ],
-  chapters: [
-    { id: "intro", num: "00", label: "Intro" },
-    { id: "story", num: "01", label: "Story" },
-    { id: "skills", num: "02", label: "Skills" },
-    { id: "experience", num: "03", label: "Work" },
-    { id: "projects", num: "04", label: "Projects" },
-    { id: "connect", num: "05", label: "Connect" },
+  sections: [
+    { id: "intro", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "connect", label: "Contact" },
   ],
   nav: [
-    { href: "#story", label: "Story" },
+    { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
-    { href: "#connect", label: "Connect" },
+    { href: "#connect", label: "Contact" },
   ],
   contact: {
     email: "ssrujanapilli@gmail.com",
@@ -154,13 +192,6 @@ const PORTFOLIO = {
       blurb: "A few technical articles—and plenty of everyday life.",
     },
     github: "https://github.com/mohanasrujana",
-  },
-  easterEgg: {
-    messages: [
-      "Plot twist: you're still scrolling. Respect. 🎬",
-      "Achievement unlocked: Triple-clicked a name. 🏆",
-      "Fun fact: I also write essays when I'm not debugging agents. ✍️",
-    ],
   },
 };
 
@@ -180,20 +211,81 @@ function init() {
   renderChapterRail();
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("footer-name").textContent = PORTFOLIO.name;
+  const footerNote = document.getElementById("footer-note");
+  if (footerNote) footerNote.textContent = PORTFOLIO.footerNote;
+  renderWebring();
   setupReveal();
-  setupChapterSpy();
+  setupSectionSpy();
   setupMobileNav();
-  setupEasterEgg();
+}
+
+function renderWebring() {
+  const el = document.getElementById("footer-webring");
+  const { webring } = PORTFOLIO;
+  if (!el || !webring) return;
+
+  el.innerHTML = `
+    <a class="webring-badge" href="${webring.href}" target="_blank" rel="noopener noreferrer">
+      <img
+        class="webring-badge__img"
+        src="${webring.src}"
+        alt="${escapeHtml(webring.alt)}"
+        width="${webring.width}"
+        height="${webring.height}"
+      />
+    </a>`;
 }
 
 function renderHero() {
+  const eyebrow = document.getElementById("hero-eyebrow");
+  if (eyebrow) eyebrow.textContent = PORTFOLIO.eyebrow;
   document.getElementById("hero-headline").textContent = PORTFOLIO.headline;
-  const taglineEl = document.getElementById("hero-tagline");
-  taglineEl.innerHTML = `<em>${PORTFOLIO.tagline.split("—")[0].trim()}</em>${
-    PORTFOLIO.tagline.includes("—")
-      ? " — " + PORTFOLIO.tagline.split("—").slice(1).join("—").trim()
-      : ""
-  }`;
+  document.getElementById("hero-tagline").textContent = PORTFOLIO.tagline;
+  renderHeroVisual();
+}
+
+function renderHeroVisual() {
+  const el = document.getElementById("hero-visual");
+  if (!el) return;
+
+  const floats = PORTFOLIO.heroHighlights
+    .map(
+      (item) => `
+      <div class="hero-float hero-float--${item.pos} reveal reveal-delay-2">
+        <span class="hero-float__label">${escapeHtml(item.label)}</span>
+        <span class="hero-float__sub">${escapeHtml(item.sub)}</span>
+      </div>`
+    )
+    .join("");
+
+  el.innerHTML = `
+    <div class="hero-orbit">
+      <svg class="hero-orbit__svg" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hero-core-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(107, 148, 184, 0.35)" />
+            <stop offset="100%" stop-color="rgba(107, 148, 184, 0)" />
+          </radialGradient>
+        </defs>
+        <circle cx="210" cy="210" r="188" fill="none" stroke="rgba(107, 148, 184, 0.14)" stroke-width="1" stroke-dasharray="3 10" class="hero-orbit__ring hero-orbit__ring--1" />
+        <circle cx="210" cy="210" r="142" fill="none" stroke="rgba(61, 107, 140, 0.2)" stroke-width="1" stroke-dasharray="2 8" class="hero-orbit__ring hero-orbit__ring--2" />
+        <circle cx="210" cy="210" r="96" fill="none" stroke="rgba(107, 148, 184, 0.16)" stroke-width="1" class="hero-orbit__ring hero-orbit__ring--3" />
+        <line x1="210" y1="210" x2="210" y2="38" stroke="rgba(107, 148, 184, 0.22)" stroke-width="1" />
+        <line x1="210" y1="210" x2="358" y2="128" stroke="rgba(107, 148, 184, 0.18)" stroke-width="1" />
+        <line x1="210" y1="210" x2="332" y2="302" stroke="rgba(107, 148, 184, 0.18)" stroke-width="1" />
+        <line x1="210" y1="210" x2="88" y2="318" stroke="rgba(107, 148, 184, 0.18)" stroke-width="1" />
+        <line x1="210" y1="210" x2="62" y2="142" stroke="rgba(107, 148, 184, 0.18)" stroke-width="1" />
+        <circle cx="210" cy="210" r="72" fill="url(#hero-core-glow)" />
+        <circle cx="210" cy="38" r="5" fill="#6b94b8" class="hero-orbit__node" />
+        <circle cx="358" cy="128" r="4" fill="#6b94b8" class="hero-orbit__node" />
+        <circle cx="332" cy="302" r="4" fill="#6b94b8" class="hero-orbit__node" />
+        <circle cx="88" cy="318" r="4" fill="#6b94b8" class="hero-orbit__node" />
+        <circle cx="62" cy="142" r="4" fill="#6b94b8" class="hero-orbit__node" />
+        <circle cx="210" cy="210" r="34" fill="rgba(20, 24, 31, 0.9)" stroke="rgba(107, 148, 184, 0.35)" stroke-width="1" />
+      </svg>
+      <div class="hero-orbit__core">SSP</div>
+    </div>
+    <div class="hero-floats">${floats}</div>`;
 }
 
 function renderAbout() {
@@ -213,18 +305,21 @@ function renderAbout() {
 function renderMediumCallout() {
   const { medium } = PORTFOLIO.contact;
   document.getElementById("medium-callout").innerHTML = `
-    <p class="medium-callout__label">Off-duty</p>
+    <p class="medium-callout__label">Writing</p>
     <p>${escapeHtml(medium.blurb)}</p>
     <a href="${medium.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(medium.label)} →</a>
   `;
 }
 
 function renderSkills() {
+  const skillsLede = document.getElementById("skills-lede");
+  if (skillsLede) skillsLede.textContent = PORTFOLIO.skillsLede;
+
   const groups = [
     { key: "languages", title: "Languages", class: "languages" },
-    { key: "frameworks", title: "Frameworks & ML", class: "frameworks" },
+    { key: "frameworks", title: "Full-Stack & ML", class: "frameworks" },
     { key: "infra", title: "Infra & Data", class: "infra" },
-    { key: "ai", title: "AI & Tools", class: "ai" },
+    { key: "ai", title: "AI / ML Engineering", class: "ai" },
     { key: "soft", title: "Soft skills", class: "soft" },
   ];
   const container = document.getElementById("skills-content");
@@ -262,13 +357,16 @@ function renderExperience() {
 }
 
 function renderProjects() {
+  const projectsLede = document.getElementById("projects-lede");
+  if (projectsLede) projectsLede.textContent = PORTFOLIO.projectsLede;
+
   const list = document.getElementById("projects-list");
   list.innerHTML = PORTFOLIO.projects
     .map(
       (p, i) => `
       <article class="project-card reveal reveal-delay-${Math.min(i + 1, 2)}">
         <div class="project-card__visual project-card__visual--${p.visualClass}">
-          <span class="project-card__emoji" aria-hidden="true">${p.emoji}</span>
+          <span class="project-card__initial" aria-hidden="true">${escapeHtml(p.initial)}</span>
         </div>
         <div class="project-card__body">
           <p class="project-card__context">${escapeHtml(p.context)}</p>
@@ -291,29 +389,30 @@ function renderProjects() {
 function renderContact() {
   const { email, linkedin, medium, github } = PORTFOLIO.contact;
   document.getElementById("connect-lede").textContent =
-    "Open to research collaborations, internships, and interesting builds. Pick your channel:";
+    "Open to full-stack SDE, AI/ML engineer, and software ML research roles—collaborations and full-time opportunities welcome.";
   document.getElementById("contact-links").innerHTML = `
     <a class="contact-card" href="mailto:${email}">
-      <span class="contact-card__icon" aria-hidden="true">✉️</span>
+      <span class="contact-card__mark" aria-hidden="true">@</span>
       <span class="contact-card__label">Email</span>
       <span class="contact-card__value">${escapeHtml(email)}</span>
     </a>
     <a class="contact-card" href="${linkedin}" target="_blank" rel="noopener noreferrer">
-      <span class="contact-card__icon" aria-hidden="true">💼</span>
+      <span class="contact-card__mark" aria-hidden="true">in</span>
       <span class="contact-card__label">LinkedIn</span>
-      <span class="contact-card__value">Connect professionally</span>
-      <span class="contact-card__hint">Career & networking</span>
+      <span class="contact-card__value">Satya Srujana Pilli</span>
+      <span class="contact-card__hint">Professional profile</span>
     </a>
     <a class="contact-card contact-card--medium" href="${medium.url}" target="_blank" rel="noopener noreferrer">
-      <span class="contact-card__icon" aria-hidden="true">✍️</span>
+      <span class="contact-card__mark" aria-hidden="true">M</span>
       <span class="contact-card__label">Medium</span>
       <span class="contact-card__value">${escapeHtml(medium.label)}</span>
       <span class="contact-card__hint">${escapeHtml(medium.blurb)}</span>
     </a>
     <a class="contact-card" href="${github}" target="_blank" rel="noopener noreferrer">
-      <span class="contact-card__icon" aria-hidden="true">⌨️</span>
+      <span class="contact-card__mark" aria-hidden="true">gh</span>
       <span class="contact-card__label">GitHub</span>
-      <span class="contact-card__value">@mohanasrujana</span>
+      <span class="contact-card__value">mohanasrujana</span>
+      <span class="contact-card__hint">Code &amp; open source</span>
     </a>
   `;
 }
@@ -328,10 +427,10 @@ function renderNav() {
 }
 
 function renderChapterRail() {
-  document.getElementById("chapter-rail").innerHTML = PORTFOLIO.chapters
+  document.getElementById("chapter-rail").innerHTML = PORTFOLIO.sections
     .map(
-      (c) =>
-        `<li><a class="chapter-rail__link" href="#${c.id}" data-section="${c.id}" aria-label="Chapter ${c.num}: ${c.label}" title="${c.label}"></a></li>`
+      (s) =>
+        `<li><a class="chapter-rail__link" href="#${s.id}" data-section="${s.id}" aria-label="${escapeHtml(s.label)}" title="${escapeHtml(s.label)}"></a></li>`
     )
     .join("");
 }
@@ -356,8 +455,8 @@ function setupReveal() {
   reveals.forEach((el) => observer.observe(el));
 }
 
-function setupChapterSpy() {
-  const sections = document.querySelectorAll(".chapter[data-chapter]");
+function setupSectionSpy() {
+  const sections = document.querySelectorAll(".chapter[data-section]");
   const railLinks = document.querySelectorAll(".chapter-rail__link");
   const navLinks = document.querySelectorAll(".site-nav__list a");
 
@@ -400,63 +499,6 @@ function setupMobileNav() {
       nav.classList.remove("is-open");
     });
   });
-}
-
-function setupEasterEgg() {
-  const nameEl = document.getElementById("hero-name");
-  let clicks = 0;
-  let timeout;
-
-  nameEl.addEventListener("click", () => {
-    clicks += 1;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      clicks = 0;
-    }, 600);
-    if (clicks >= 3) {
-      clicks = 0;
-      triggerEasterEgg();
-    }
-  });
-}
-
-function triggerEasterEgg() {
-  const nameEl = document.getElementById("hero-name");
-  const toast = document.getElementById("easter-toast");
-  const messages = PORTFOLIO.easterEgg.messages;
-  const msg = messages[Math.floor(Math.random() * messages.length)];
-
-  nameEl.classList.add("is-wiggle");
-  setTimeout(() => nameEl.classList.remove("is-wiggle"), 500);
-
-  toast.textContent = msg;
-  toast.hidden = false;
-  toast.classList.add("is-shown");
-
-  if (!prefersReducedMotion) {
-    spawnConfetti();
-  }
-
-  setTimeout(() => {
-    toast.classList.remove("is-shown");
-    setTimeout(() => {
-      toast.hidden = true;
-    }, 400);
-  }, 3200);
-}
-
-function spawnConfetti() {
-  const colors = ["#ff6b4a", "#a78bfa", "#fbbf24", "#60a5fa", "#34d399"];
-  for (let i = 0; i < 40; i++) {
-    const piece = document.createElement("div");
-    piece.className = "confetti-piece";
-    piece.style.left = Math.random() * 100 + "vw";
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-    piece.style.animationDuration = 1.5 + Math.random() * 2 + "s";
-    piece.style.animationDelay = Math.random() * 0.5 + "s";
-    document.body.appendChild(piece);
-    piece.addEventListener("animationend", () => piece.remove());
-  }
 }
 
 function escapeHtml(str) {

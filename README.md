@@ -4,7 +4,7 @@ Two versions — pick your vibe:
 
 | Version | Path | Vibe |
 |---------|------|------|
-| **Classic** | `personalportfolio.html` or `index.html` | Scroll-story chapters, modern dark theme |
+| **Classic** | `personalportfolio.html` or `index.html` | Professional portfolio, clean dark theme |
 | **Fun** | `fun/` | Brooklyn Nine-Nine precinct dossier · coffee · movies |
 
 ## Preview locally
@@ -34,6 +34,4 @@ Push to GitHub and enable Pages for this repo (branch `main`, folder `/` root). 
 
 `https://mohanasrujana.github.io/Personal-Portfolio-Webpage/`
 
-## Easter egg
-
-Triple-click your name in the hero section.
+Easter eggs and playful interactions live in the **fun** edition only (`fun/`).
