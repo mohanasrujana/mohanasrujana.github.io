@@ -1271,6 +1271,70 @@ main {
   margin-top: 1.25rem;
 }
 
+.webring-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.webring-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 11rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.webring-nav__link:hover {
+  color: var(--accent-muted);
+}
+
+.webring-nav__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.webring-nav__dir {
+  flex-shrink: 0;
+  color: var(--accent-muted);
+}
+
+.webring-pending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.webring-pending__note {
+  max-width: 22rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.webring-pending__note a {
+  color: var(--accent-muted);
+}
+
+.webring-pending__note--preview {
+  margin-top: 0.5rem;
+}
+
+.webring-pending__note code {
+  font-size: 0.85em;
+  color: var(--text);
+}
+
 .webring-badge {
   display: inline-block;
   line-height: 0;

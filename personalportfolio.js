@@ -22,7 +22,11 @@ const PORTFOLIO = {
     { label: "Focus", sub: "AI · Software ML research", pos: "br" },
   ],
   webring: {
-    href: "https://umaring.github.io/",
+    // Must match your "id" in https://github.com/umaring/umaring.github.io members.json
+    memberId: "mohanasrujana",
+    // Set to another member's id (e.g. "haylin") to preview prev/next locally before your PR merges
+    devPreviewMemberId: null,
+    hubUrl: "https://umaring.github.io/",
     src: "assets/umass-amherst-webring.png",
     alt: "UMass Amherst Web Ring",
     width: 88,
@@ -243,19 +247,16 @@ function init() {
   document.getElementById("footer-name").textContent = PORTFOLIO.name;
   const footerNote = document.getElementById("footer-note");
   if (footerNote) footerNote.textContent = PORTFOLIO.footerNote;
-  renderWebring();
+  setupWebring();
   setupReveal();
   setupSectionSpy();
   setupMobileNav();
 }
 
-function renderWebring() {
-  const el = document.getElementById("footer-webring");
-  const { webring } = PORTFOLIO;
-  if (!el || !webring) return;
-
-  el.innerHTML = `
-    <a class="webring-badge" href="${webring.href}" target="_blank" rel="noopener noreferrer">
+function webringBadgeMarkup(webring) {
+  const hub = webring.hubUrl || webring.href || "https://umaring.github.io/";
+  return `
+    <a class="webring-badge" href="${hub}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(webring.alt)}">
       <img
         class="webring-badge__img"
         src="${webring.src}"
@@ -264,6 +265,72 @@ function renderWebring() {
         height="${webring.height}"
       />
     </a>`;
+}
+
+function webringNavMarkup(data, badge) {
+  return `
+    <nav class="webring-nav" aria-label="UMass Amherst Web Ring">
+      <a class="webring-nav__link" href="${data.prev.url}" rel="noopener noreferrer">
+        <span class="webring-nav__dir" aria-hidden="true">←</span>
+        <span class="webring-nav__name">${escapeHtml(data.prev.name)}</span>
+      </a>
+      ${badge}
+      <a class="webring-nav__link" href="${data.next.url}" rel="noopener noreferrer">
+        <span class="webring-nav__name">${escapeHtml(data.next.name)}</span>
+        <span class="webring-nav__dir" aria-hidden="true">→</span>
+      </a>
+    </nav>`;
+}
+
+function webringPendingMarkup(badge, memberId) {
+  return `
+    <div class="webring-pending">
+      ${badge}
+    </div>`;
+}
+
+function resolveWebringFetchId(webring) {
+  const isLocal =
+    location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  if (isLocal && webring.devPreviewMemberId) {
+    return webring.devPreviewMemberId;
+  }
+  return webring.memberId;
+}
+
+async function setupWebring() {
+  const el = document.getElementById("footer-webring");
+  const { webring } = PORTFOLIO;
+  if (!el || !webring) return;
+
+  const badge = webringBadgeMarkup(webring);
+
+  if (!webring.memberId) {
+    el.innerHTML = badge;
+    return;
+  }
+
+  const fetchId = resolveWebringFetchId(webring);
+  el.innerHTML = badge;
+
+  try {
+    const res = await fetch(
+      `https://umaring.github.io/${encodeURIComponent(fetchId)}.json`
+    );
+    if (!res.ok) throw new Error(`Webring API ${res.status}`);
+
+    const data = await res.json();
+    if (!data?.prev?.url || !data?.next?.url) throw new Error("Invalid webring payload");
+
+    const previewNote =
+      fetchId !== webring.memberId
+        ? `<p class="webring-pending__note webring-pending__note--preview">Local preview (using <code>${escapeHtml(fetchId)}</code> until your PR merges).</p>`
+        : "";
+
+    el.innerHTML = `${webringNavMarkup(data, badge)}${previewNote}`;
+  } catch {
+    el.innerHTML = webringPendingMarkup(badge, webring.memberId);
+  }
 }
 
 function renderHero() {
