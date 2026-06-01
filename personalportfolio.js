@@ -4,13 +4,17 @@ const PORTFOLIO = {
   headline:
     "MS Computer Science, UMass Amherst · ex-Amazon SDE · AI and SDE focused",
   tagline:
-    "I ship full-stack software in production and build AI/ML systems—from LLM applications and ML pipelines to research prototypes in software ML.",
+    "I develop production-quality full-stack software and AI/ML systems, with experience spanning LLM applications, machine learning pipelines, and research-oriented software ML projects.",
   footerNote:
     "Full-stack SDE · AI/ML engineer · BINDS Lab · UMass Amherst · ex-Amazon",
   skillsLede:
     "Stack for full-stack product development, ML engineering, and research code—from APIs and front ends to model training and deployment.",
   projectsLede:
     "Full-stack and ML builds: LLM-powered tools, summarization products, and research software with measurable impact.",
+  photo: {
+    src: "assets/profile.jpg",
+    alt: "Portrait of Satya Srujana Pilli",
+  },
   heroHighlights: [
     { label: "BINDS Lab", sub: "Software ML research", pos: "tl" },
     { label: "UMass Amherst", sub: "MS CS · CGPA 3.96", pos: "tr" },
@@ -117,6 +121,16 @@ const PORTFOLIO = {
       ],
     },
     {
+      title: "Graduate Teaching Assistant",
+      org: "Manning College of CICS · UMass Amherst",
+      dates: "Sep 2025 – Dec 2025",
+      bullets: [
+        "Graduate TA for Theory and Practice of Software Engineering (COMPSCI 520)—office hours, assignment feedback, and project support for graduate students.",
+        "Helped students apply software engineering practices: requirements, design, testing, and team-based development on course projects.",
+        "Collaborated with course staff on grading rubrics and consistent evaluation across submissions.",
+      ],
+    },
+    {
       title: "Graduate Research Assistant",
       org: "CIIR Lab · Amherst",
       dates: "Apr 2025 – Sep 2025",
@@ -145,6 +159,16 @@ const PORTFOLIO = {
         "Implemented service profilers and consistency checks across distributed backend systems.",
       ],
     },
+    {
+      title: "ML Intern",
+      org: "Hertztech Solutions Pvt Ltd",
+      dates: "May 2020 – Jul 2020",
+      bullets: [
+        "Trained and deployed machine learning models to analyze vehicle noise quality, using AI/ML methods to predict sound quality and classify a dataset of 2,000+ audio samples.",
+        "Evaluated engine health from acoustic signals, achieving 95% accuracy.",
+        "Applied sampling and data augmentation to improve data quality and diversity; validated models with 98% success across real-world scenarios.",
+      ],
+    },
   ],
   projects: [
     {
@@ -153,9 +177,9 @@ const PORTFOLIO = {
       initial: "CE",
       visualClass: "crime",
       story:
-        "ML engineering project: a forensic LLM pipeline (Mistral 7B, Gemma 3) with few-shot prompting to extract crime elements from chat data—cutting manual review time by 60%. Shipped a Flask ML API and CLI for batch CSV, PDF, and XLSX processing.",
+        "Developed an end-to-end forensic LLM system using Mistral 7B and Gemma 3 to identify and extract crime-related entities from conversational data. Engineered a Flask-powered ML service and CLI for scalable batch processing across CSV, PDF, and XLSX formats, cutting manual investigation effort by 60%.",
       tech: ["Python", "Flask", "Ollama", "Mistral-7B", "Gemma 3"],
-      repo: null,
+      repo: "https://github.com/mohanasrujana/Message-Analyser",
     },
     {
       title: "Briefly",
@@ -163,9 +187,9 @@ const PORTFOLIO = {
       initial: "BR",
       visualClass: "briefly",
       story:
-        "Full-stack summarization product (React, Flask, MongoDB) with MistralAI—~95% accuracy, 100+ files/day for 50+ users, and 30% faster backend processing after optimization.",
+        "Built a full-stack AI-powered document summarization platform using React, Flask, MongoDB, and Mistral AI, achieving ~95% summarization accuracy. Supported processing of over 100 files per day for 50+ users and improved backend performance by 30% through system optimization.",
       tech: ["React", "Flask", "MistralAI", "MongoDB", "Axios"],
-      repo: null,
+      repo: "https://github.com/mohanasrujana/briefly",
     },
   ],
   sections: [
@@ -182,7 +206,13 @@ const PORTFOLIO = {
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#connect", label: "Contact" },
+    { href: "assets/resume.pdf", label: "Resume", download: true },
   ],
+  resume: {
+    href: "assets/resume.pdf",
+    fileName: "Pilli,SatyaSrujana_Resume.pdf",
+    label: "Download resume",
+  },
   contact: {
     email: "ssrujanapilli@gmail.com",
     linkedin: "https://www.linkedin.com/in/satya-srujana-pilli-79a69b1ab/",
@@ -241,25 +271,28 @@ function renderHero() {
   if (eyebrow) eyebrow.textContent = PORTFOLIO.eyebrow;
   document.getElementById("hero-headline").textContent = PORTFOLIO.headline;
   document.getElementById("hero-tagline").textContent = PORTFOLIO.tagline;
+  renderHeroActions();
   renderHeroVisual();
 }
 
-function renderHeroVisual() {
-  const el = document.getElementById("hero-visual");
+function renderHeroActions() {
+  const el = document.getElementById("hero-actions");
   if (!el) return;
 
-  const floats = PORTFOLIO.heroHighlights
-    .map(
-      (item) => `
-      <div class="hero-float hero-float--${item.pos} reveal reveal-delay-2">
-        <span class="hero-float__label">${escapeHtml(item.label)}</span>
-        <span class="hero-float__sub">${escapeHtml(item.sub)}</span>
-      </div>`
-    )
-    .join("");
+  const resume = PORTFOLIO.resume;
+  const resumeBtn = resume
+    ? `<a class="btn btn--ghost btn--download" href="${resume.href}" download="${escapeHtml(resume.fileName)}">${escapeHtml(resume.label)}</a>`
+    : "";
 
   el.innerHTML = `
-    <div class="hero-orbit">
+    <a class="btn btn--primary" href="#experience">View experience</a>
+    ${resumeBtn}
+    <a class="btn btn--ghost" href="#connect">Contact</a>`;
+}
+
+function renderHeroOrbitMarkup() {
+  return `
+    <div class="hero-orbit" aria-hidden="true">
       <svg class="hero-orbit__svg" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="hero-core-glow" cx="50%" cy="50%" r="50%">
@@ -281,11 +314,46 @@ function renderHeroVisual() {
         <circle cx="332" cy="302" r="4" fill="#6b94b8" class="hero-orbit__node" />
         <circle cx="88" cy="318" r="4" fill="#6b94b8" class="hero-orbit__node" />
         <circle cx="62" cy="142" r="4" fill="#6b94b8" class="hero-orbit__node" />
-        <circle cx="210" cy="210" r="34" fill="rgba(20, 24, 31, 0.9)" stroke="rgba(107, 148, 184, 0.35)" stroke-width="1" />
       </svg>
-      <div class="hero-orbit__core">SSP</div>
-    </div>
-    <div class="hero-floats">${floats}</div>`;
+    </div>`;
+}
+
+function renderHeroVisual() {
+  const el = document.getElementById("hero-visual");
+  const photo = PORTFOLIO.photo;
+  if (!el || !photo) return;
+
+  el.removeAttribute("aria-hidden");
+
+  const floats = PORTFOLIO.heroHighlights
+    .map(
+      (item) => `
+      <div class="hero-float hero-float--${item.pos} reveal reveal-delay-2">
+        <span class="hero-float__label">${escapeHtml(item.label)}</span>
+        <span class="hero-float__sub">${escapeHtml(item.sub)}</span>
+      </div>`
+    )
+    .join("");
+
+  el.innerHTML = `
+    <div class="hero-visual-stack reveal reveal-delay-1">
+      ${renderHeroOrbitMarkup()}
+      <figure class="hero-photo">
+        <div class="hero-photo__frame">
+          <img
+            class="hero-photo__img"
+            src="${photo.src}"
+            alt="${escapeHtml(photo.alt)}"
+            width="908"
+            height="1024"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="hero-photo__shade" aria-hidden="true"></div>
+        </div>
+      </figure>
+      <div class="hero-floats" aria-label="Career highlights">${floats}</div>
+    </div>`;
 }
 
 function renderAbout() {
@@ -388,9 +456,20 @@ function renderProjects() {
 
 function renderContact() {
   const { email, linkedin, medium, github } = PORTFOLIO.contact;
+  const resume = PORTFOLIO.resume;
+  const resumeCard = resume
+    ? `<a class="contact-card contact-card--resume" href="${resume.href}" download="${escapeHtml(resume.fileName)}">
+      <span class="contact-card__mark" aria-hidden="true">↓</span>
+      <span class="contact-card__label">Resume</span>
+      <span class="contact-card__value">${escapeHtml(resume.label)}</span>
+      <span class="contact-card__hint">PDF · one-click download</span>
+    </a>`
+    : "";
+
   document.getElementById("connect-lede").textContent =
-    "Open to full-stack SDE, AI/ML engineer, and software ML research roles—collaborations and full-time opportunities welcome.";
+   "Open to full-stack software engineering, AI/ML engineering, and software ML research opportunities, including full-time roles and collaborations.";
   document.getElementById("contact-links").innerHTML = `
+    ${resumeCard}
     <a class="contact-card" href="mailto:${email}">
       <span class="contact-card__mark" aria-hidden="true">@</span>
       <span class="contact-card__label">Email</span>
@@ -418,11 +497,19 @@ function renderContact() {
 }
 
 function renderNav() {
+  const resumeFileName = PORTFOLIO.resume?.fileName ?? "";
   document.getElementById("site-nav-list").innerHTML = PORTFOLIO.nav
-    .map(
-      (n) =>
-        `<li><a href="${n.href}" data-section="${n.href.slice(1)}">${escapeHtml(n.label)}</a></li>`
-    )
+    .map((n) => {
+      const isHash = n.href.startsWith("#");
+      const sectionAttr = isHash
+        ? ` data-section="${n.href.slice(1)}"`
+        : "";
+      const downloadAttr =
+        n.download && resumeFileName
+          ? ` download="${escapeHtml(resumeFileName)}"`
+          : "";
+      return `<li><a href="${n.href}"${sectionAttr}${downloadAttr}>${escapeHtml(n.label)}</a></li>`;
+    })
     .join("");
 }
 

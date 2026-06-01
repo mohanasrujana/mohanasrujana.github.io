@@ -52,12 +52,20 @@
     </aside>
 
     <main id="main">
-      <section class="dossier-panel hero-panel" id="intro">
+      <section class="dossier-panel hero-panel panel-theme theme--logo" id="intro">
         <div class="stamp stamp--classified">CLASSIFIED</div>
         <div class="hero-panel__grid">
           <div class="mugshot-card">
             <div class="mugshot-card__frame">
-              <span class="mugshot-card__initials">SSP</span>
+              <img
+                class="mugshot-card__photo"
+                id="mugshot-photo"
+                src="assets/mugshot.png"
+                alt="Satya Srujana Pilli — subject dossier photo"
+                width="576"
+                height="1024"
+                loading="eager"
+              />
               <p class="mugshot-card__caption">ID #PILLI-99</p>
             </div>
           </div>
@@ -69,17 +77,14 @@
             <p class="hero-panel__headline" id="hero-headline"></p>
             <p class="hero-panel__tagline" id="hero-tagline"></p>
             <div class="quote-ticker" id="quote-ticker" aria-live="polite"></div>
-            <div class="hero-panel__actions">
-              <a class="btn btn--gold" href="#dossier">Open dossier</a>
-              <a class="btn btn--outline" href="#tip-line">Send a tip</a>
-            </div>
+            <div class="hero-panel__actions" id="hero-actions"></div>
           </div>
         </div>
       </section>
 
-      <section class="dossier-panel vibes-panel" id="vibes">
+      <section class="dossier-panel vibes-panel panel-theme theme--cool" id="vibes">
         <h2 class="panel-title">
-          <span class="panel-title__num">A</span> Off-duty intel
+          <span class="panel-title__num">00</span> Off-duty intel
         </h2>
         <p class="panel-subtitle">
           What fuels the detective when the IDE closes.
@@ -87,7 +92,7 @@
         <div class="vibes-grid" id="vibes-grid"></div>
       </section>
 
-      <section class="dossier-panel" id="dossier">
+      <section class="dossier-panel panel-theme theme--tape" id="dossier">
         <h2 class="panel-title">
           <span class="panel-title__num">01</span> Subject background
         </h2>
@@ -98,7 +103,7 @@
         </div>
       </section>
 
-      <section class="dossier-panel" id="arsenal">
+      <section class="dossier-panel panel-theme theme--logo" id="arsenal">
         <h2 class="panel-title">
           <span class="panel-title__num">02</span> Equipment locker
         </h2>
@@ -106,24 +111,34 @@
         <div id="arsenal-body"></div>
       </section>
 
-      <section class="dossier-panel" id="field-reports">
+      <section class="dossier-panel panel-theme theme--tape" id="field-reports">
         <h2 class="panel-title">
           <span class="panel-title__num">03</span> Field reports
         </h2>
         <ol class="report-list" id="field-reports-list"></ol>
       </section>
 
-      <section class="dossier-panel" id="open-cases">
+      <section class="dossier-panel paperwork-panel panel-theme theme--cool" id="paperwork">
         <h2 class="panel-title">
-          <span class="panel-title__num">04</span> Open cases
+          <span class="panel-title__num">04</span> Official paperwork
+        </h2>
+        <p class="panel-subtitle">
+          Authorized resume—pull a copy for your files.
+        </p>
+        <div id="paperwork-body"></div>
+      </section>
+
+      <section class="dossier-panel panel-theme theme--logo" id="open-cases">
+        <h2 class="panel-title">
+          <span class="panel-title__num">05</span> Open cases
         </h2>
         <p class="panel-subtitle">Active investigations & shipped builds.</p>
         <div class="case-board" id="open-cases-list"></div>
       </section>
 
-      <section class="dossier-panel tip-panel" id="tip-line">
+      <section class="dossier-panel tip-panel panel-theme theme--tape" id="tip-line">
         <h2 class="panel-title">
-          <span class="panel-title__num">05</span> Tip line
+          <span class="panel-title__num">06</span> Tip line
         </h2>
         <p class="panel-subtitle" id="tip-lede"></p>
         <div class="tip-cards" id="tip-cards"></div>

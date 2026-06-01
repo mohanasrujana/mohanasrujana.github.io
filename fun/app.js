@@ -1,17 +1,36 @@
 const DOSSIER = {
   name: "Satya Srujana Pilli",
   headline:
-    "MS Computer Science @ UMass · ex-Amazon SDE · part-time detective energy",
+    "MS CS @ UMass · BINDS Lab · ex-Amazon SDE · full-stack & AI/ML",
   tagline:
-    "By day: shipping code & catching rogue LLM agents. By night: coffee, movies, and rewatching the Nine-Nine for the 99th time.",
+    "By day: shipping full-stack software, ML pipelines, and catching rogue LLM agents. By night: coffee, movies, and rewatching the Nine-Nine for the 99th time.",
+  resume: {
+    href: "../assets/resume.pdf",
+    fileName: "Satya_Srujana_Pilli_Resume.pdf",
+    label: "Download official resume",
+  },
+  mugshot: {
+    src: "assets/mugshot.png",
+    alt: "Satya Srujana Pilli — subject dossier photo",
+    caption: "ID #PILLI-99",
+  },
   about: [
-    "Subject began career at Amazon Bangalore—payment systems across six EU/UK markets, item-level financing, WebLabs experiments. Learned that \"production-ready\" is not a vibe; it's a requirement.",
-    "Currently at UMass Amherst (MS CS, CGPA 3.96). Active files: gaze-based preferences at CIIR Lab, adaptive LLM monitoring at Cisco, forensic AI at RescueLab. Motivated by systems that actually help people—not just leaderboard numbers.",
-    "Prior education: B.E. Computer Science, BITS Pilani Hyderabad. Open to collaborations where ML, systems, and shipped products intersect.",
+    "Subject began at Amazon Bangalore as a full-stack SDE—payment services, item-level financing, and WebLabs experiments across six EU/UK markets. Verdict: \"production-ready\" is not a vibe; it's a requirement.",
+    "Earned MS Computer Science at UMass Amherst (Sep 2024 – May 2026, CGPA 3.96). Closed cases include gaze-based preference learning at CIIR Lab, adaptive LLM agent monitoring at Cisco, and forensic AI pipelines at RescueLab.",
+    "Current assignment: BINDS Lab under Prof. Hava Siegelmann—biologically inspired neural architectures, modular ML systems, and research tooling for neural network experimentation.",
+    "Prior education: B.E. Computer Science, BITS Pilani Hyderabad (2018–2022). Open to full-stack SDE, AI/ML engineer, and software ML research roles.",
   ],
   education: [
-    { school: "UMass Amherst", degree: "MS Computer Science", detail: "CGPA 3.96" },
-    { school: "BITS Pilani", degree: "B.E. Computer Science", detail: "CGPA 8.33" },
+    {
+      school: "UMass Amherst",
+      degree: "MS Computer Science",
+      detail: "CGPA 3.96 · Sep 2024 – May 2026",
+    },
+    {
+      school: "BITS Pilani Hyderabad",
+      degree: "B.E. Computer Science",
+      detail: "CGPA 8.33 · 2018–2022",
+    },
   ],
   vibes: {
     coffee: {
@@ -35,13 +54,33 @@ const DOSSIER = {
   },
   experience: [
     {
+      title: "Researcher",
+      org: "BINDS Lab · UMass Amherst · Prof. Hava Siegelmann",
+      dates: "May 2026 – Present",
+      bullets: [
+        "Neural nets from logic-gate-inspired building blocks—interpretable components, modular configs.",
+        "Tooling to generate, test, and analyze weight databases across network configurations.",
+        "Biologically inspired computation & structured design with the BINDS Lab crew.",
+      ],
+    },
+    {
       title: "Graduate Research Extern",
       org: "Cisco · San Francisco",
       dates: "Jan 2026 – May 2026",
       bullets: [
-        "Adaptive LLM monitoring agent (ReAct-style) across 50+ trajectories.",
+        "Adaptive LLM monitoring agent (ReAct-style) across 50+ trajectories—sabotage, drift, hidden objectives.",
         "+30% threat-detection recall vs static classifiers.",
         "Ablation benchmarks on recall/precision trade-offs.",
+      ],
+    },
+    {
+      title: "Graduate Teaching Assistant",
+      org: "Manning College of CICS · UMass Amherst",
+      dates: "Sep 2025 – Dec 2025",
+      bullets: [
+        "TA for COMPSCI 520 (Theory & Practice of Software Engineering)—office hours, grading, project backup.",
+        "Coached students on requirements, design, testing & team dev—noice-to-production pipeline.",
+        "Aligned rubrics with course staff for fair, consistent case reviews.",
       ],
     },
     {
@@ -49,9 +88,9 @@ const DOSSIER = {
       org: "CIIR Lab · Amherst",
       dates: "Apr 2025 – Sep 2025",
       bullets: [
-        "Gaze-based preference signals; −40% multi-session mismatches.",
-        "Evaluation redesign; +30% reliability, faster experiment cycles.",
-        "Reward-model accuracy +25%; eliminated silent data-loss bugs.",
+        "Gaze-based preference signals; −40% multi-session mismatches (200+ sessions).",
+        "Evaluation redesign; +30% reliability on domain-specific gaze inputs.",
+        "Reward-model accuracy +25%; hardened storage—no more silent data-loss.",
       ],
     },
     {
@@ -59,9 +98,9 @@ const DOSSIER = {
       org: "Amazon · Bangalore",
       dates: "Jul 2022 – Mar 2024",
       bullets: [
-        "Installment plans across 6 EU/UK markets (+20% UX).",
-        "Item-level financing (+28% engagement); −35% payment latency.",
-        "WebLabs A/B across 12 launches; 99.9% deploy success.",
+        "Full-stack payment features (Java, Spring, AWS) across 6 EU/UK markets (+20% UX).",
+        "Item-level financing controls (+28% engagement); −35% payment latency.",
+        "WebLabs A/B experiments; 99.9% deploy success rate.",
       ],
     },
     {
@@ -69,8 +108,18 @@ const DOSSIER = {
       org: "Amazon · Bangalore",
       dates: "Jan 2022 – Jun 2022",
       bullets: [
-        "Vapor planning tool for 50+ teams (−20% overhead).",
-        "Service profilers & consistency checks on distributed systems.",
+        "Vapor: full-stack planning tool for 50+ teams (−20% overhead).",
+        "Service profilers & consistency checks on distributed backend systems.",
+      ],
+    },
+    {
+      title: "ML Intern",
+      org: "Hertztech Solutions Pvt Ltd",
+      dates: "May 2020 – Jul 2020",
+      bullets: [
+        "Trained & deployed ML models for vehicle noise quality—classified 2,000+ audio samples.",
+        "Engine health from acoustic signals: 95% accuracy. Case closed on the rumble.",
+        "Sampling & augmentation for better data; 98% validation success in the field.",
       ],
     },
   ],
@@ -78,20 +127,22 @@ const DOSSIER = {
     {
       id: "CASE-001",
       title: "LLM Crime Element Analyzer",
-      context: "RescueLab · Prof. Brian Levine",
+      context: "UMass RescueLab · Prof. Brian Levine",
       emoji: "🔎",
       story:
-        "Forensic pipeline with Mistral 7B & Gemma 3—few-shot extraction from chat data. −60% manual review. Flask API + CLI; 10k+ messages across 3 investigations.",
-      tech: ["Python", "Flask", "Mistral", "Gemma"],
+        "Developed an end-to-end forensic LLM system using Mistral 7B and Gemma 3 to identify and extract crime-related entities from conversational data. Engineered a Flask-powered ML service and CLI for scalable batch processing across CSV, PDF, and XLSX formats, cutting manual investigation effort by 60%.",
+      tech: ["Python", "Flask", "Ollama", "Mistral-7B", "Gemma 3"],
+      repo: "https://github.com/mohanasrujana/Message-Analyser",
     },
     {
       id: "CASE-002",
       title: "Briefly",
-      context: "Summarization HQ",
-      emoji: "🎬",
+      context: "Full-stack · AI product",
+      emoji: "📄",
       story:
-        "~95% accuracy via MistralAI; 100+ files/day, 50+ users. Backend tuned for −30% processing time.",
-      tech: ["React", "Flask", "MongoDB", "MistralAI"],
+        "Built a full-stack AI-powered document summarization platform using React, Flask, MongoDB, and Mistral AI, achieving ~95% summarization accuracy. Supported processing of over 100 files per day for 50+ users and improved backend performance by 30% through system optimization.",
+      tech: ["React", "Flask", "MistralAI", "MongoDB", "Axios"],
+      repo: "https://github.com/mohanasrujana/briefly",
     },
   ],
   contact: {
@@ -109,6 +160,7 @@ const DOSSIER = {
     { href: "#dossier", label: "Dossier" },
     { href: "#arsenal", label: "Arsenal" },
     { href: "#field-reports", label: "Reports" },
+    { href: "#paperwork", label: "Resume" },
     { href: "#open-cases", label: "Cases" },
     { href: "#tip-line", label: "Tip line" },
   ],
@@ -146,6 +198,7 @@ function init() {
   renderMediumNote();
   renderArsenal();
   renderFieldReports();
+  renderPaperwork();
   renderOpenCases();
   renderTipLine();
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -166,35 +219,76 @@ function renderNav() {
     .join("");
 }
 
+function renderMugshot() {
+  const { mugshot } = DOSSIER;
+  const img = document.getElementById("mugshot-photo");
+  const caption = document.querySelector(".mugshot-card__caption");
+  if (!mugshot || !img) return;
+
+  img.src = mugshot.src;
+  img.alt = mugshot.alt;
+  if (caption) caption.textContent = mugshot.caption;
+}
+
 function renderHero() {
+  renderMugshot();
   document.getElementById("hero-headline").textContent = DOSSIER.headline;
   document.getElementById("hero-tagline").textContent = DOSSIER.tagline;
   document.getElementById("quote-ticker").textContent = DOSSIER.quotes[0];
+
+  const actions = document.getElementById("hero-actions");
+  const resume = DOSSIER.resume;
+  const resumeBtn = resume
+    ? `<a class="btn btn--outline btn--resume" href="${resume.href}" download="${escapeHtml(resume.fileName)}">📎 Pull resume</a>`
+    : "";
+
+  actions.innerHTML = `
+    <a class="btn btn--gold" href="#dossier">Open dossier</a>
+    ${resumeBtn}
+    <a class="btn btn--outline" href="#tip-line">Send a tip</a>`;
 }
 
 function renderVibes() {
   const { coffee, b99, movies } = DOSSIER.vibes;
+  const chip = (label) =>
+    `<span class="vibe-card__chip">${escapeHtml(label)}</span>`;
+
   document.getElementById("vibes-grid").innerHTML = `
     <article class="vibe-card vibe-card--coffee pop-in">
-      <div class="vibe-card__icon" aria-hidden="true">☕</div>
-      <h3 class="vibe-card__title">Coffee protocol</h3>
-      <p class="vibe-card__text"><strong>Order:</strong> ${escapeHtml(coffee.order)}</p>
-      <p class="vibe-card__text">${escapeHtml(coffee.note)}</p>
-    </article>
-    <article class="vibe-card vibe-card--b99 pop-in" style="animation-delay:0.1s">
-      <div class="vibe-card__icon" aria-hidden="true">🚔</div>
-      <h3 class="vibe-card__title">99th Precinct</h3>
-      <p class="vibe-card__text">${escapeHtml(b99.note)}</p>
-      <div class="vibe-card__tags">
-        ${b99.tags.map((t) => `<span>${escapeHtml(t)}</span>`).join("")}
+      <div class="vibe-card__accent" aria-hidden="true"></div>
+      <header class="vibe-card__head">
+        <span class="vibe-card__icon" aria-hidden="true">☕</span>
+        <h3 class="vibe-card__title">Coffee protocol</h3>
+      </header>
+      <div class="vibe-card__body">
+        <p class="vibe-card__lead">${escapeHtml(coffee.order)}</p>
+        <p class="vibe-card__text">${escapeHtml(coffee.note)}</p>
       </div>
     </article>
-    <article class="vibe-card vibe-card--movies pop-in" style="animation-delay:0.2s">
-      <div class="vibe-card__icon" aria-hidden="true">🎬</div>
-      <h3 class="vibe-card__title">Movie night</h3>
-      <p class="vibe-card__text">${escapeHtml(movies.note)}</p>
-      <div class="film-strip" aria-label="Favorite picks">
-        ${movies.picks.map((p) => `<span class="film-strip__frame">${escapeHtml(p)}</span>`).join("")}
+    <article class="vibe-card vibe-card--b99 pop-in" style="animation-delay:0.08s">
+      <div class="vibe-card__accent" aria-hidden="true"></div>
+      <header class="vibe-card__head">
+        <span class="vibe-card__icon" aria-hidden="true">🚔</span>
+        <h3 class="vibe-card__title">99th Precinct</h3>
+      </header>
+      <div class="vibe-card__body">
+        <p class="vibe-card__text">${escapeHtml(b99.note)}</p>
+        <div class="vibe-card__chips" aria-label="Favorite characters">
+          ${b99.tags.map(chip).join("")}
+        </div>
+      </div>
+    </article>
+    <article class="vibe-card vibe-card--movies pop-in" style="animation-delay:0.16s">
+      <div class="vibe-card__accent" aria-hidden="true"></div>
+      <header class="vibe-card__head">
+        <span class="vibe-card__icon" aria-hidden="true">🎬</span>
+        <h3 class="vibe-card__title">Movie night</h3>
+      </header>
+      <div class="vibe-card__body">
+        <p class="vibe-card__text">${escapeHtml(movies.note)}</p>
+        <div class="vibe-card__chips" aria-label="Favorite picks">
+          ${movies.picks.map(chip).join("")}
+        </div>
       </div>
     </article>
   `;
@@ -243,6 +337,24 @@ function renderArsenal() {
     .join("");
 }
 
+function renderPaperwork() {
+  const resume = DOSSIER.resume;
+  const el = document.getElementById("paperwork-body");
+  if (!el || !resume) return;
+
+  el.innerHTML = `
+    <div class="paperwork-file pop-in">
+      <p class="paperwork-file__stamp" aria-hidden="true">EXHIBIT A · AUTHORIZED</p>
+      <h3 class="paperwork-file__title">Official employment &amp; service record</h3>
+      <p class="paperwork-file__desc">
+        PDF dossier: education, field reports, open cases, and contact intel—cleared for recruiters and hiring captains.
+      </p>
+      <a class="btn btn--gold paperwork-file__btn" href="${resume.href}" download="${escapeHtml(resume.fileName)}">
+        ↓ ${escapeHtml(resume.label)}
+      </a>
+    </div>`;
+}
+
 function renderFieldReports() {
   document.getElementById("field-reports-list").innerHTML = DOSSIER.experience
     .map(
@@ -275,6 +387,11 @@ function renderOpenCases() {
         <div class="case-file__tech">
           ${p.tech.map((t) => `<span>${escapeHtml(t)}</span>`).join("")}
         </div>
+        ${
+          p.repo
+            ? `<a class="case-file__link" href="${p.repo}" target="_blank" rel="noopener noreferrer">View source on GitHub →</a>`
+            : ""
+        }
       </article>`
     )
     .join("");
@@ -282,9 +399,19 @@ function renderOpenCases() {
 
 function renderTipLine() {
   const { email, linkedin, github, medium } = DOSSIER.contact;
+  const resume = DOSSIER.resume;
+  const resumeCard = resume
+    ? `<a class="tip-card tip-card--resume" href="${resume.href}" download="${escapeHtml(resume.fileName)}">
+      <span class="tip-card__emoji" aria-hidden="true">📎</span>
+      <span class="tip-card__label">Resume</span>
+      <span class="tip-card__value">${escapeHtml(resume.label)}</span>
+    </a>`
+    : "";
+
   document.getElementById("tip-lede").textContent =
     "Got a lead? Collaboration? Just want to debate heist-movie endings? Drop a line:";
   document.getElementById("tip-cards").innerHTML = `
+    ${resumeCard}
     <a class="tip-card" href="mailto:${email}">
       <span class="tip-card__emoji" aria-hidden="true">✉️</span>
       <span class="tip-card__label">Email</span>
