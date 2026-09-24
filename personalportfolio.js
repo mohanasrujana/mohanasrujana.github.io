@@ -304,12 +304,42 @@ const PORTFOLIO = {
       repo: "https://github.com/mohanasrujana/digital-twin",
     },
   ],
+  contributions: [
+    {
+      project: "AquaScope",
+      title: "Group station records by site",
+      story: "Grouped co-located station records in search and nearest-gauge results while preserving access to each record. Added record selectors, clearer map markers, and Python and JavaScript regression tests.",
+      tech: ["Python", "JavaScript", "Data Modeling"],
+      pr: "https://github.com/Rekin226/aquascope/pull/407",
+      number: 407,
+      status: "Merged",
+    },
+    {
+      project: "mergeid",
+      title: "Verify membership across every team",
+      story: "Updated GitHub team verification to use the authenticated user's teams and paginate beyond 100 results. Added exact organization and team matching, with mocked tests for matches, errors, and pagination.",
+      tech: ["TypeScript", "GitHub API", "Unit Testing"],
+      pr: "https://github.com/Ishannaik/mergeid/pull/137",
+      number: 137,
+      status: "Merged",
+    },
+    {
+      project: "AquaScope",
+      title: "Collect Colorado streamflow data",
+      story: "Added a Colorado CDSS telemetry collector that normalizes discharge readings and converts units to cubic meters per second. Integrated dashboard inputs, mocked unit tests, and data-source documentation.",
+      tech: ["Python", "API Integration", "Data Normalization"],
+      pr: "https://github.com/Rekin226/aquascope/pull/371",
+      number: 371,
+      status: "Merged",
+    },
+  ],
   sections: [
     { id: "intro", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
+    { id: "open-source", label: "Open Source" },
     { id: "connect", label: "Contact" },
   ],
   nav: [
@@ -317,6 +347,7 @@ const PORTFOLIO = {
     { href: "#skills", label: "Skills" },
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
+    { href: "#open-source", label: "Open Source" },
     { href: "#connect", label: "Contact" },
     { href: "assets/resume.pdf", label: "Resume", download: true },
   ],
@@ -348,6 +379,7 @@ function init() {
   renderSkills();
   renderExperience();
   renderProjects();
+  renderContributions();
   renderContact();
   renderNav();
   renderChapterRail();
@@ -638,6 +670,28 @@ function renderProjects() {
         </div>
       </article>`
     )
+    .join("");
+}
+
+function renderContributions() {
+  const list = document.getElementById("contributions-list");
+  if (!list) return;
+  list.innerHTML = PORTFOLIO.contributions
+    .map((contribution) => `
+      <article class="project-card reveal">
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <p class="project-card__context">${escapeHtml(contribution.project)}</p>
+            <span class="project-card__status">${escapeHtml(contribution.status)}</span>
+          </div>
+          <h3 class="project-card__title">${escapeHtml(contribution.title)}</h3>
+          <p class="project-card__story">${escapeHtml(contribution.story)}</p>
+          <div class="project-card__tech">
+            ${contribution.tech.map((tech) => `<span>${escapeHtml(tech)}</span>`).join("")}
+          </div>
+          <a class="project-card__link" href="${contribution.pr}" target="_blank" rel="noopener noreferrer">View ${escapeHtml(contribution.project)} PR #${contribution.number} →</a>
+        </div>
+      </article>`)
     .join("");
 }
 

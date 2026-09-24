@@ -1254,6 +1254,28 @@ main {
   font-weight: 600;
 }
 
+/* ===== Open Source ===== */
+.contributions-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1000px) {
+  .contributions-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.contributions-grid .project-card__body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contributions-grid .project-card__link {
+  margin-top: auto;
+}
+
 /* ===== Contact ===== */
 .chapter--connect {
   padding-bottom: 4.5rem;
